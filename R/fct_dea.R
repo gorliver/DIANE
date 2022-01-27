@@ -53,7 +53,7 @@ estimateDispersion <- function(tcc, conditions = NULL) {
     group = groups,
     genes = rownames(tcc$count)
   )
-  bcv <- 0.4
+  bcv <- 0.1
   #y <- edgeR::estimateDisp(dge, design)
   fit <- edgeR::glmFit(dge, design,dispersion=bcv^2)
   return(fit)
